@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #f0ede4;
+  --color-ink: #171713;
+  --color-coral: #eb5a3c;
+  --font-sans: "DM Sans", sans-serif;
+  --font-display: "Manrope", sans-serif;
+}
+
+html {
+  background: var(--color-ink);
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-coral);
+  color: var(--color-cream);
+}
+
+.headline {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 7.8vw, 8.2rem);
+  font-weight: 600;
+  line-height: 0.88;
+  letter-spacing: 0.13em;
+  white-space: nowrap;
+}
+
+.hero-ring {
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  width: min(70vw, 62rem);
+  aspect-ratio: 1;
+  translate: -50% 0;
+  border: clamp(2.5rem, 8vw, 8rem) solid var(--color-coral);
+  border-radius: 999px;
+  opacity: 0.93;
+}
+
+.hero-ring::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border: 1px solid rgb(23 23 19 / 18%);
+  border-radius: inherit;
+  scale: 1.22;
+}
+
+.grain {
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  opacity: 0.12;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.24'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
+}
+
+@media (max-width: 640px) {
+  .headline {
+    font-size: clamp(2rem, 10.5vw, 4.2rem);
+    letter-spacing: 0.06em;
+  }
+
+  .hero-ring {
+    top: 25%;
+    width: 100vw;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

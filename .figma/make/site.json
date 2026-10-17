@@ -1,0 +1,10 @@
+{
+  "description": "Engaging hero section with smooth scroll-triggered animations and dynamic stats that enhance user interaction and showcase key metrics effectively.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
